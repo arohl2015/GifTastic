@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!--links for bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
@@ -18,25 +19,34 @@
 </head>
 
 <body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
+<!--Adding in header for the game-->
+<div class="container">
+<div class="jumbotron text-center">
+    <h1>The Disney Movie GIF Search!</h1>
+  </div>
+  
+  <!--Creating spaces to hold all the elements-->
+  <div class="row">
+      <!--space for buttons-->
+      <div class="col-md-12" id="gifButtons"></div>
+      </div>
+  <!-- Add bootstrap search form -->
+  <div class="row">
+    <div class="col-md-12">
+  <form id="form">
+  <label for="user-search">Add your favorite Disney movie!</label><br>
+  <!-- Input text box-->
+  <input type="text" id="user-search">
+  <!-- search button-->
+  <input id="submitButton" type="submit" value="Submit" class="btn btn-secondary">
+  </form>
+    </div>
+  </div>
+  <!-- Empty space for all the GIFs -->
+ <div class="row">
+     <div class="col-md-12" id="display-image"></div>
+ </div>
+</div>
 
     <!--link in JS that links to js game file in assets folder-->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
