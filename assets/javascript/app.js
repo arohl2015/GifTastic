@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     //Need a click function to display the gifs and limit to 10
     $("button").on("click", function () {
-        var disney = $(this).attr("data-disney")
+        var disney = $(this).attr("data-name");
         //adding in the queryURL to call my topics
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + disney
             + "&api_key=XkBUwWsWZbjJd8jPjMS74rwU2bvbhlat&limit=10"
@@ -50,7 +50,7 @@ $(document).ready(function () {
             console.log(response);
             //class review - this stores the data from our AJAX
             var result = response.data;
-            $("#display-images").empty();
+            $("#displayImgs").empty();
             //loops through the results var created
             for (var i = 0; i < result.length; i++) {
                 // create new div's, p's, and img's
@@ -66,7 +66,7 @@ $(document).ready(function () {
                 disneyImg.attr("class", "gif");
                 disneyDiv.append(p);
                 disneyDiv.append(disneyImg);
-                $("#display-images").append(disneyDiv);
+                $("#displayImgs").append(disneyDiv);
             }
         });
 
@@ -88,7 +88,7 @@ $(document).ready(function () {
         }
     }
 
-    $(document).on("click", ".gif" changeGif);
+    $(document).on("click", ".gif", changeGif);
 
 });
 
