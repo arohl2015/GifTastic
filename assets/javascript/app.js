@@ -5,9 +5,6 @@ var topics = [
     "Aladdin", "Toy Story", "The Little Mermaid", "The Lion King", "Finding Nemo",
     "Mickey Mouse", "Olaf", "Maleficent", "Cinderella", "Mary Poppins"
 ];
-//Global variables for topic
-var topicsSelected = "";
-var topicsNew;
 
 //Create the buttons within my webpage
 
@@ -24,16 +21,47 @@ function renderButton() {
     }
 }
 
-//creating click event - once I click on the button the gifs display
-$(".buttons").on("click", function() {
-    ;
+//extra line to call the render function
+renderButton();
+
+// Going to add click function for any disney related item the user enters
+$("#submitButton").on("click", function () {
+ //Per class, we add event.preventDefault() to prevent the form from trying to submit itself.
+    event.preventDefault();
+    var disney = $("#user-search").val().trim();
+    topics.push(disney);
+    renderButton();
+    return;
+});
+
+//Need a click function to display the gifs and limit to 10 (**bonus)
+
+$(.buttons).on("click", function() {
+    var disney = $(this).attr("data-name")
+    //adding in the queryURL to call my topics
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + disney
+    + "&api_key=XkBUwWsWZbjJd8jPjMS74rwU2bvbhlat&limit=10";
+});
+
+  // AJAX request with the queryURL
+$.ajax({
+    url: queryURL,
+    method: "GET"
+    //Per research: always prefer .then() so code is compatible with the open promise standard
+  }).then(function (response) {
+      //logging my responses and queryURL
+      console.log(queryURL);
+      console.log(response);
+      //class review - this stores the data from our AJAX
+      var result = responses.data;
+      $("#display-images").empty();
+      //loops through the results var created
+      for (var i = 0; i < result.length; i++) {
+          
+          
+          
+      }
 
 
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-      person + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
 
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    })
 
