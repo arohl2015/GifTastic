@@ -34,14 +34,13 @@ $("#submitButton").on("click", function () {
     return;
 });
 
-//Need a click function to display the gifs and limit to 10 (**bonus)
+//Need a click function to display the gifs and limit to 10
 
-$(.buttons).on("click", function() {
+$("buttons").on("click", function() {
     var disney = $(this).attr("data-name")
     //adding in the queryURL to call my topics
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + disney
     + "&api_key=XkBUwWsWZbjJd8jPjMS74rwU2bvbhlat&limit=10";
-});
 
   // AJAX request with the queryURL
 $.ajax({
@@ -57,8 +56,19 @@ $.ajax({
       $("#display-images").empty();
       //loops through the results var created
       for (var i = 0; i < result.length; i++) {
-          
-          
+        // create new div's, p's, and img's
+        var disneyDiv = $("<div>");
+        var p = $("<p>").text("Rating: " + result[i].rating);
+        var disneyImg = $("<img>");
+    // creating general image src for all images to be able to animate
+    // and pause them - cannot pull each random image separately
+        disneyImg.attr("src", response.date[i].images.original_still.url);
+        disneyImg.attr("src", response.date[i].images.original_still.url);
+        disneyImg.attr("src", response.date[i].images.original_still.url);
+        disneyImg.attr("src", response.date[i].images.original_still.url);
+        disneyImg.attr("src", response.date[i].images.original_still.url);
+        disneyDiv.append(image);
+
           
       }
 
