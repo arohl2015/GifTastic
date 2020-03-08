@@ -9,24 +9,24 @@ $(document).ready(function () {
     //Create the buttons within my webpage
 
     function renderButton() {
-        $("#gifButtons").empty();
+        $("#disneyButtons").empty();
         //loop through the array I created
         for (var i = 0; i < topics.length; i++) {
             var g = $("<button>");
             g.addClass("disney");
             g.attr("data-name", topics[i]);
             g.text(topics[i]);
-            $("#gifButtons").append(g);
+            $("#disneyButtons").append(g);
         }
     }
-    //extra line to call the render function
+    //calling render function for user input
     renderButton();
 
     // Going to add click function for any disney related item the user enters
     $("#submitButton").on("click", function () {
         //Per class, we add event.preventDefault() to prevent the form from trying to submit itself.
         event.preventDefault();
-        var disney = $("#user-search").val().trim();
+        var disney = $("#disney-search").val().trim();
         topics.push(disney);
         renderButton();
         return;
@@ -50,7 +50,7 @@ $(document).ready(function () {
             console.log(response);
             //class review - this stores the data from our AJAX
             var result = response.data;
-            $("#displayImgs").empty();
+            $("#displayDisney").empty();
             //loops through the results var created
             for (var i = 0; i < result.length; i++) {
                 // create new div's, p's, and img's
@@ -66,7 +66,7 @@ $(document).ready(function () {
                 disneyImg.attr("class", "gif");
                 disneyDiv.append(p);
                 disneyDiv.append(disneyImg);
-                $("#displayImgs").append(disneyDiv);
+                $("#displayDisney").append(disneyDiv);
             }
         });
 
