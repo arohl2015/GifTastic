@@ -1,4 +1,5 @@
 // Start of Game
+$(document).ready(function () {
 //Create topic array to hold my initial button variables
 
 var topics = [
@@ -40,7 +41,7 @@ $("buttons").on("click", function() {
     var disney = $(this).attr("data-name")
     //adding in the queryURL to call my topics
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + disney
-    + "&api_key=XkBUwWsWZbjJd8jPjMS74rwU2bvbhlat&limit=10";
+    + "&api_key=XkBUwWsWZbjJd8jPjMS74rwU2bvbhlat&limit=10"
 
   // AJAX request with the queryURL
 $.ajax({
@@ -62,16 +63,38 @@ $.ajax({
         var disneyImg = $("<img>");
     // creating general image src for all images to be able to animate
     // and pause them - cannot pull each random image separately
-        disneyImg.attr("src", response.date[i].images.original_still.url);
-        disneyImg.attr("src", response.date[i].images.original_still.url);
-        disneyImg.attr("src", response.date[i].images.original_still.url);
-        disneyImg.attr("src", response.date[i].images.original_still.url);
-        disneyImg.attr("src", response.date[i].images.original_still.url);
-        disneyDiv.append(image);
+        disneyImg.attr("src", result[i].images.original_still.url);
+        disneyImg.attr("data-pause",result[i].images.original_still.url);
+        disneyImg.attr("data-animate", result[i].images.original.url);
+        disneyImg.attr("data-state", "pause");
+        disneyImg.attr("class", "gif");
+        disneyDiv.append(p);
+        disneyDiv.append(disneyImg);
+        $("#display-images").append(disneyDiv);
+        }
+  });
 
-          
-      }
+});
 
+function changeGif() {
+    var state = $(this).attr("data-state");
+    var animateImg = $(this).attr("data-animate");
+    var pauseImg = $(this).attr("data-pause");
+// from class -if  the clicked image's state is still, need to update to show what it is if animated
+      // Add in if/else statements to show what would happen based on whether its paused or animated
+    if (state === "pause") {
+        $(this).attr("src", animateImg);
+        $(this).attr("data-state", "animate");
+    }
+    else if (state === "animate") {
+        $(this).attr("src", pauseImg);
+        $(this).attr("data-state", "pause")
+    }
+}
+
+$(document).on("click", "gif" changeGif);
+
+});
 
 
 
