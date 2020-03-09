@@ -1,9 +1,9 @@
 // Start of Game
 $(document).ready(function () {
-    //Create topic array to hold my initial button variables
+    //Create topics array to hold my initial button variables
 
     var topics = [
-        "Aladdin", "Toy Story", "The Little Mermaid", "The Lion King", "Finding Nemo",
+        "Aladdin", "Toy Story", "The Little Mermaid", "The Lion King", "Finding Nemo", "The Incredibles",
         "Mickey Mouse", "Olaf", "Maleficent", "Cinderella", "Mary Poppins"];
 
     //Create the buttons within my webpage
@@ -13,27 +13,27 @@ $(document).ready(function () {
         //loop through the array I created
         for (var i = 0; i < topics.length; i++) {
             var g = $("<button>");
-            g.addClass("disney");
+            g.addClass("button");
             g.attr("data-name", topics[i]);
             g.text(topics[i]);
             $("#disneyButtons").append(g);
-        }
-    }
-    //calling render function for user input
+        };
+    };
+    //calling renderButton function for user input
     renderButton();
 
     // Going to add click function for any disney related item the user enters
-    $("#submitButton").on("click", function () {
+    $("#submitButton").on("click", function (event) {
         //Per class, we add event.preventDefault() to prevent the form from trying to submit itself.
         event.preventDefault();
-        var disney = $("#disney-search").val().trim();
-        topics.push(disney);
+        var submit = $("#disney-search").val().trim();
+        topics.push(submit);
         renderButton();
-        return;
+        $("#form")[0].reset();
     });
 
     //Need a click function to display the gifs and limit to 10
-    $("button").on("click", function () {
+    $(".button").on("click", function () {
         var disney = $(this).attr("data-name");
         //adding in the queryURL to call my topics
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + disney

@@ -1,0 +1,17 @@
+.jumbotron {
+    background: url(../images/disney.jpg);
+    background-size: cover;
+}
+
+h1, h5, h6 {
+    color: white;
+    font-weight: bold;
+}
+
+.button {
+    border-radius: 5px;
+	border: 1px darkgray;
+	padding: 10px 15px 10px 15px;
+	margin: 5px;
+	color: grey;
+}
