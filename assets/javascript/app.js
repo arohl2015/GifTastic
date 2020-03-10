@@ -1,8 +1,8 @@
 //Create topics array to hold my initial button variables
 
 var topics = [
-    "Aladdin", "Toy Story", "The Little Mermaid", "The Lion King", "Finding Nemo", "The Incredibles",
-    "Mickey Mouse", "Olaf", "Maleficent", "Cinderella", "Mary Poppins"];
+    "Star Wars", "Toy Story", "The Little Mermaid", "The Lion King", "Finding Nemo",
+    "Mickey Mouse", "Baby Yoda", "Iron Man", "Cinderella", "Mary Poppins"];
 
 //Create the buttons within my webpage (using original array)
 

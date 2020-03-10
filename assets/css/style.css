@@ -3,9 +3,13 @@
     background-size: cover;
 }
 
-h1, h5, h6 {
+#title {
+    font-family: 'Courgette', cursive;
     color: white;
-    font-weight: bold;
+}
+
+h5, h6 {
+    color: white;
 }
 
 .button {

@@ -16,40 +16,42 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<!--Adding in header for the game-->
-<div class="container">
-<div class="jumbotron text-center">
-    <h1>The Great Disney GIF Search</h1>
-    <h5>Select any button to see the magic!</h5>
-    <h6>(click on the gifs to play or pause them)</h6>
-  </div>
-  
-  <!--Creating spaces to hold all the elements-->
-  <div class="row">
-      <!--space for buttons-->
-      <div class="col-md-12" id="disneyButtons"></div>
-      </div>
-      <br>
-  <!-- Add bootstrap search form -->
-  <div class="row">
-    <div class="col-md-12">
-  <form id="form">
-  <label for="disney-search">Add your favorite Disney character or movie:</label><br>
-  <!-- Input text box-->
-  <input type="text" id="disney-search">
-  <!-- search button-->
-  <input id="submitButton" type="submit" value="Submit" class="btn btn-secondary">
-  </form>
+    <!--Adding in header for the game-->
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 id="title">The Disney GIF Search</h1>
+            <h5>Select any button to begin</h5>
+            <h6>(click on the gifs to see the magic!)</h6>
+        </div>
+
+        <!--Creating spaces to hold all the elements-->
+        <div class="row">
+            <!--space for buttons-->
+            <div class="col-md-10" id="disneyButtons"></div>
+        </div>
+        <br>
+        <!-- Add bootstrap search form -->
+        <div class="row">
+            <div class="col-md-12">
+                <form id="form">
+                    <label for="disney-search">Add your favorite Disney character or movie:</label><br>
+                    <!-- Input text box-->
+                    <input type="text" id="disney-search">
+                    <!-- search button-->
+                    <input id="submitButton" type="submit" value="Submit" class="btn btn-secondary">
+                </form>
+            </div>
+        </div>
+        <!-- Empty space for all the GIFs -->
+        <div class="row">
+            <div class="col-md-12" id="displayDisney"></div>
+        </div>
     </div>
-  </div>
-  <!-- Empty space for all the GIFs -->
- <div class="row">
-     <div class="col-md-12" id="displayDisney"></div>
- </div>
-</div>
 
     <!--link in JS that links to js game file in assets folder-->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
