@@ -43,8 +43,8 @@ function displayDisneyGifs () {
         for (var i = 0; i < result.length; i++) {
             // create new div's, p's, and img's
             var disneyDiv = $("<div>");
-            var p = $("<p>").text("Rating: " + result[i].rating);
-            var t = $("<p>").text("Title: " + result[i].title);
+            var rating = $("<p>").text("Rating: " + result[i].rating);
+            var title = $("<p>").text("Title: " + result[i].title);
             var disneyImg = $("<img>");
             // creating general image src for all images to be able to animate
             // and pause them - cannot pull each random image separately
@@ -54,8 +54,8 @@ function displayDisneyGifs () {
             disneyImg.attr("data-state", "pause");
             disneyImg.attr("class", "gif");
             disneyDiv.append(disneyImg);
-            disneyDiv.append(p);
-            disneyDiv.append(t);
+            disneyDiv.append(rating);
+            disneyDiv.append(title);
             $("#displayDisney").prepend(disneyDiv);
         }
     });
@@ -85,9 +85,11 @@ $("#submitButton").on("click", function (event) {
     var submit = $("#disney-search").val().trim();
     topics.push(submit);
     renderButton();
+    //reset form to clear after user submits input
     $("#form")[0].reset();
 });
 
+// calling the functions created above
 $(document).on("click", ".gif", changeGif);
 $(document).on("click", ".button", displayDisneyGifs);
 
