@@ -3,7 +3,7 @@
     background-size: cover;
 }
 
-#title {
+#h-title {
     font-family: 'Courgette', cursive;
     color: white;
 }
@@ -13,13 +13,22 @@ h5, h6 {
 }
 
 body {
-	background: url(../images/background.jpg);
+    background: url(../images/background.jpg);
 }
 
 .button {
     border-radius: 5px;
-	border: 1px darkgray;
 	padding: 5px 10px 5px 10px;
 	margin: 5px;
-	color: grey;
+    background-color: darkblue;
+    color: white;
+    border: 2px solid black;
+    font-size: 16px;
 }
+
+img {
+	max-width: 250px;
+    max-height: 250px;
+}
+
+

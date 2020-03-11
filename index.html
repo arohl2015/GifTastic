@@ -24,7 +24,7 @@
     <!--Adding in header for the game-->
     <div class="container">
         <div class="jumbotron text-center">
-            <h1 id="title">The Disney GIF Search</h1>
+            <h1 id="h-title">The Disney GIF Search</h1>
             <h5>Select any button to begin</h5>
             <h6>(click on the gifs to see the magic!)</h6>
         </div>
@@ -32,14 +32,14 @@
         <!--Creating spaces to hold all the elements-->
         <div class="row">
             <!--space for buttons-->
-            <div class="col-md-12" id="disneyButtons"></div>
+            <div class="col-md-8">
+            <div id="disneyButtons">
         </div>
-        <br>
+        </div>
         <!-- Add bootstrap search form -->
-        <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-4">
                 <form id="form">
-                    <label for="disney-search">Add your favorite Disney character or movie:</label><br>
+                    <label for="disney-search">Add your favorite Disney character or movie: </label><br>
                     <!-- Input text box-->
                     <input type="text" id="disney-search">
                     <!-- search button-->
@@ -47,6 +47,7 @@
                 </form>
             </div>
         </div>
+
         <!-- Empty space for all the GIFs -->
         <div class="row">
             <div class="col-md-12" id="displayDisney"></div>

@@ -2,7 +2,7 @@
 
 var topics = [
     "Star Wars", "Toy Story", "The Little Mermaid", "The Lion King", "Finding Nemo",
-    "Mickey Mouse", "Baby Yoda", "Iron Man", "Cinderella"];
+    "Mickey Mouse", "Baby Yoda", "Cinderella"];
 
 //Create the buttons within my webpage (using original array)
 
