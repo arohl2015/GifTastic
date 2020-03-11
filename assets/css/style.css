@@ -12,6 +12,10 @@ h5, h6 {
     color: white;
 }
 
+body {
+	background: url(../images/background.jpg);
+}
+
 .button {
     border-radius: 5px;
 	border: 1px darkgray;
