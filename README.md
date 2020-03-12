@@ -12,7 +12,7 @@ Use the GIPHY API to make a dynamic web page that populates with gifs of your ch
    * This data is provided by the GIPHY API.
 5. Add a form to the page that takes a value from a user input box and adds it my array. I then make a function call that takes each topic in the array and remakes the buttons on the page.
 
-##### Theme #####
+### Theme ###
 * Disney GIF Search
 
 # Created with:
